@@ -334,11 +334,12 @@ img {
 /* Skills Section */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1400px;
+    padding: 0 20px;
 }
 
 .skill {
@@ -373,6 +374,12 @@ img {
 }
 
 /* Responsive Design */
+@media (max-width: 1400px) {
+    .skills-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 @media (max-width: 1200px) {
     .skills-container {
         grid-template-columns: repeat(3, 1fr);
