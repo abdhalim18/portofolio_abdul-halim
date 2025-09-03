@@ -333,69 +333,67 @@ img {
 
 /* Skills Section */
 .skills-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    justify-content: space-between;
-}
-
-.skills-column {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .skill {
     background-color: var(--card-bg);
-    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 25px 20px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .skill:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .skill div:first-child {
     font-weight: 600;
     margin-bottom: 15px;
-    color: var(--primary-color);
+    color: var(--text-color);
     font-size: 1.1rem;
 }
 
 .skill svg {
-    max-width: 60px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-}
-.skills {
-    background-color: var(--bg-color);
-}
-
-.skills-container {
-    max-width: 800px;
+    width: 60px;
+    height: 60px;
     margin: 0 auto;
 }
 
-.skill {
-    margin-bottom: 25px;
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.skill-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.skill-info span {
-    font-weight: 600;
-    color: var(--text-color);
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .skill {
+        padding: 20px 15px;
+    }
 }
 
 .progress-bar {
